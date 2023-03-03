@@ -2,9 +2,6 @@ package com.in28Minutes.microservice.currencyexchangeservice;
 
 import java.math.BigDecimal;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class CurrencyExchange {
 	
 	private Long id;
