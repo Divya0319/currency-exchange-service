@@ -1,2 +1,11 @@
 Currency Exchange Service
 http://localhost:8000/currency-exchange/from/USD/to/INR
+
+Currency COnversion Service
+http://localhost:8100/currency-conversion-feign/from/USD/to/INR/quantity/50
+
+API Gateway Currency Exchange
+http://localhost:8765/currency-exchange/from/USD/to/INR
+
+API Gateway Currency Conversion
+http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/50
