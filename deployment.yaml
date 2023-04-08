@@ -8,7 +8,7 @@ metadata:
   name: currency-exchange
   namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: currency-exchange
@@ -26,6 +26,17 @@ spec:
       - image: nikoleye/currency-exchange-service-kubernetes:0.0.12-SNAPSHOT
         imagePullPolicy: IfNotPresent
         name: currency-exchange-service-kubernetes
+        readinessProbe:
+          httpGet:
+            port: 8000
+            path: /actuator/health/readiness
+        livenessProbe:
+          httpGet:
+            port: 8000
+            path: /actuator/health/liveness
+        resources:
+          requests: 
+            cpu: "250m"
       restartPolicy: Always
 ---
 apiVersion: v1
